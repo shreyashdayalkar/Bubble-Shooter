@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.nav {
+  height: 5rem;
+  width: 100%;
+  background-color: lightseagreen;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+}
+
+.score-card {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.bubble-container {
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 50%;
+  margin: auto;
+
+  /* The height: calc(100% - 5rem); CSS property dynamically calculates the height of an element by subtracting 5rem from 100% of its container's height. */
+  height: calc(100% - 5rem);
+
+  background-color: white;
+  padding: 1rem 1rem;
+
+  /* //overflow-y: auto; If the content fits within the container: No scrollbar appears.
+    If the content exceeds the container’s height: A scrollbar is displayed. */
+  overflow-y: auto;
+}
+
+.bubble {
+  /* //The user-select none css property prevents the user from selecting text or elements on a webpage */
+  user-select: none;
+  display: flex;
+  /* The cursor: pointer; CSS property changes the mouse cursor to a hand icon, indicating that an element is clickable */
+  cursor: pointer;
+
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+  height: 3rem;
+  width: 3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* after game over this will be style for displayed items on the screen */
+.append_container{
+  text-align: center;
+  margin-top: 2rem;
+  height: 20rem;
+  width: 100%;
+}
+
+.game_over {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: tomato;
+}
+
+.rst_btn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background: lightseagreen;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game_score {
+  margin-top: 1rem;
+  margin: 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
