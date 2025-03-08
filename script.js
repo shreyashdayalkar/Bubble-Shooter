@@ -50,7 +50,7 @@ function resetGame() {
   leftTime = originalTime; //this is must step it makes the timer start from +ve integers instead of -ve
   timer.textContent = originalTime;
   score.textContent = 0;
-  scoreValue=0;
+  scoreValue = 0;
   startGame(); //idhar starGame() call krnee avashyakk ahee nhitrr game restart honar nhi
 }
 
@@ -63,19 +63,25 @@ startGame();
 
 //  Create a separate numeric variable to track the score (e.g., let scoreValue = 0;).
 // score is a DOM element reference (not a number).You cannot perform arithmetic operations on a DOM object.
-let scoreValue=0; 
+let scoreValue = 0;
 
 //Event Delegation
 bubble_container.addEventListener("click", (event) => {
   if (event.target.classList.contains("bubble")) {
     if (event.target.textContent === target.textContent) {
+      event.target.style.backgroundColor = " rgb(99, 222, 99)";   // Correct click
       scoreValue += 10;
-      createBubble();  // Refresh bubbles on correct click
-      generateTarget();
+      setTimeout(()=>{
+        createBubble(); // Refresh bubbles on correct click
+        generateTarget();
+      },300);
+    } else {
+      event.target.style.backgroundColor = "red";  // Wrong click
+      setTimeout(() => {
+        event.target.style.backgroundColor = "white"; // Reset color
+      }, 300);
+      scoreValue -= 5;
     }
-    else{
-        scoreValue -= 5;
-    }
-    score.textContent=scoreValue;
+    score.textContent = scoreValue;
   }
 });
